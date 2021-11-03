@@ -148,3 +148,9 @@
 .new_search {
   padding: 1rem;
 }
+
+.contacts {
+  width: 400px;
+  height: 63vh;
+  background-color: white;
+}
