@@ -28,6 +28,7 @@
   width: 1100px;
   height: 10vh;
   background-color: #eaeaea;
+  display: flex;
 }
 
 .chat_users {
@@ -65,7 +66,27 @@
 
 .fa-circle-notch,
 .fa-comment-alt,
-.fa-ellipsis-v {
+.fa-ellipsis-v,
+.fa-search,
+.fa-paperclip {
   padding: 7px;
+  color: #b1b1b1;
+}
+
+.user_last_access {
+  width: 700px;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.user_1 {
+  width: 60px;
+  border-radius: 50%;
+  margin: 5px 15px;
+}
+
+.icons_1 {
+  padding-left: 18rem;
   color: #b1b1b1;
 }
