@@ -33,5 +33,39 @@
 .chat_users {
   width: 1100px;
   height: 85vh;
-  background-color: rgb(160, 158, 158);
+  background-color: rgb(199, 198, 198);
+}
+
+.user_name {
+  width: 400px;
+  height: 10vh;
+  border-right: 1px solid #d6d6d6;
+}
+
+.conversation {
+  width: 400px;
+  height: 85vh;
+  border-right: 1px solid #d6d6d6;
+}
+
+.user {
+  width: 60px;
+  border-radius: 50%;
+  margin: 5px 15px;
+}
+
+.photo_profile {
+  display: flex;
+  align-items: center;
+}
+
+.icons {
+  padding-left: 4rem;
+}
+
+.fa-circle-notch,
+.fa-comment-alt,
+.fa-ellipsis-v {
+  padding: 7px;
+  color: #b1b1b1;
 }
