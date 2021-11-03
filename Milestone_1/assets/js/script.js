@@ -6,10 +6,13 @@ const app = new Vue({
         nome: "Michele",
       },
       {
-        nome: "Lucia",
+        nome: "Fabio",
       },
       {
         nome: "Samuele",
+      },
+      {
+        nome: "Luisa",
       },
     ],
   },
