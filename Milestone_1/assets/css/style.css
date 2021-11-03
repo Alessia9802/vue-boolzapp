@@ -43,7 +43,7 @@
   border-right: 1px solid #d6d6d6;
 }
 
-.conversation {
+.sidebar {
   width: 400px;
   height: 85vh;
   border-right: 1px solid #d6d6d6;
@@ -89,4 +89,31 @@
 .icons_1 {
   padding-left: 18rem;
   color: #b1b1b1;
+}
+
+.notifiche {
+  width: 400px;
+  height: 12vh;
+  background-color: #8edafc;
+  display: flex;
+  align-items: center;
+}
+
+.bell {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  background-color: #f2fbff;
+  margin: 15px;
+}
+
+.fa-bell-slash {
+  padding: 10px;
+  color: #8edafc;
+}
+
+.notify_desk {
+  font-size: 14px;
+  text-decoration: underline;
+  color: #547698;
 }
