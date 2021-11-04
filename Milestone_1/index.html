@@ -76,8 +76,8 @@
               </div>
               <!-- lista dei contatti -->
               <div class="contacts">
-                <div class="list" v-for="contatto in contatti">
-                  {{contatto.nome}}{{contatto.img}}
+                <div class="list" v-for="contact in contacts">
+                  <div>{{contact.name}}</div>
                 </div>
               </div>
             </div>
@@ -106,5 +106,9 @@
     </div>
 
     <script src="./assets/js/script.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>
+      dayjs().format();
+    </script>
   </body>
 </html>

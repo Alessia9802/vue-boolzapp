@@ -156,12 +156,6 @@
   background-color: white;
   overflow-y: scroll;
 }
-
-/* .message_area {
-  width: calc(1100px - 400px);
-  height: 76vh;
-} */
-
 .chat {
   width: calc(1100px - 400px);
   height: 76vh;
