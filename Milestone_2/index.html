@@ -91,8 +91,15 @@
             <!-- area messaggi -->
             <div class="message_area">
               <div class="chat">
-                <div class="conversations" v-for="(message, index) in messages">
-                  <div class="message">{{ message.text }}</div>
+                <div
+                  class="conversations"
+                  v-for="(message, index) in contacts[activeContact].messages "
+                >
+                  <div class="message">
+                    {{ message.text }}{{ message.date }}{{ message.sent }}
+
+                    <div @click="{{ contact[activeContact].name }}"></div>
+                  </div>
                 </div>
               </div>
               <div class="new_message">
