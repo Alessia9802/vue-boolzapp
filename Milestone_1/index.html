@@ -77,7 +77,14 @@
               <!-- lista dei contatti -->
               <div class="contacts">
                 <div class="list" v-for="contact in contacts">
-                  <div>{{contact.name}}</div>
+                  <div class="avatar_contacts">
+                    <img
+                      class="icon_avatar"
+                      :src="'./assets/img/avatar' + contact.avatar + '.jpg'"
+                      alt=""
+                    />
+                    <div>{{ contact.name }}</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -104,9 +111,10 @@
         </div>
       </div>
     </div>
-
-    <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+
     <script>
       dayjs().format();
     </script>
