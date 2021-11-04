@@ -15,68 +15,89 @@
     <title>Boolzapp</title>
   </head>
   <body>
-    <!-- background widescreen-->
-    <div class="bg_screen">
-      <div class="green">
-        <div class="users">
-          <!-- icona profilo -->
-          <div class="user_name">
-            <div class="photo_profile">
-              <img class="user" src="./assets/img/avatar_io.jpg" alt="" />
-              <p>Nome utente</p>
-              <div class="icons">
-                <i class="fas fa-circle-notch fa-2x"></i>
-                <i class="fas fa-comment-alt fa-2x"></i>
+    <div id="app">
+      <!-- background widescreen-->
+      <div class="bg_screen">
+        <div class="green">
+          <div class="users">
+            <!-- icona profilo -->
+            <div class="user_name">
+              <div class="photo_profile">
+                <img class="user" src="./assets/img/avatar_io.jpg" alt="" />
+                <p>Nome utente</p>
+                <div class="icons">
+                  <i class="fas fa-circle-notch fa-2x"></i>
+                  <i class="fas fa-comment-alt fa-2x"></i>
+                  <i class="fas fa-ellipsis-v fa-2x"></i>
+                </div>
+              </div>
+            </div>
+            <!-- ultimo accesso dell'utente -->
+            <div class="user_last_access">
+              <div class="photo_profile_1">
+                <img class="user_1" src="./assets/img/avatar_1.jpg" alt="" />
+              </div>
+              <div class="text">
+                <p>Michele</p>
+                <p>Ultimo accesso oggi alle</p>
+              </div>
+              <div class="icons_1">
+                <i class="fas fa-search fa-2x"></i>
+                <i class="fas fa-paperclip fa-2x"></i>
                 <i class="fas fa-ellipsis-v fa-2x"></i>
               </div>
             </div>
           </div>
-          <!-- ultimo accesso dell'utente -->
-          <div class="user_last_access">
-            <div class="photo_profile_1">
-              <img class="user_1" src="./assets/img/avatar_1.jpg" alt="" />
-            </div>
-            <div class="text">
-              <p>Michele</p>
-              <p>Ultimo accesso oggi alle</p>
-            </div>
-            <div class="icons_1">
-              <i class="fas fa-search fa-2x"></i>
-              <i class="fas fa-paperclip fa-2x"></i>
-              <i class="fas fa-ellipsis-v fa-2x"></i>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="gray">
-        <div class="chat_users">
-          <!-- barra laterale -->
-          <div class="sidebar">
-            <!-- banner notifiche -->
-            <div class="notifiche">
-              <div class="bell">
-                <i class="fas fa-bell-slash fa-2x"></i>
+        <div class="gray">
+          <div class="chat_users">
+            <!-- barra laterale -->
+            <div class="sidebar">
+              <!-- banner notifiche -->
+              <div class="notifiche">
+                <div class="bell">
+                  <i class="fas fa-bell-slash fa-2x"></i>
+                </div>
+                <div class="message">
+                  <p>Ricevi notifiche di nuovi messaggi</p>
+                  <p class="notify_desk">Attiva notifiche desktop</p>
+                </div>
               </div>
-              <div class="message">
-                <p>Ricevi notifiche di nuovi messaggi</p>
-                <p class="notify_desk">Attiva notifiche desktop</p>
+              <!-- barra di ricerca -->
+              <div class="search">
+                <div class="barra">
+                  <i class="fas fa-search fa-lg new_search"></i>
+                  <input
+                    type="text"
+                    placeholder="Cerca o inizia una nuova chat"
+                    class="research"
+                  />
+                </div>
+              </div>
+              <!-- lista dei contatti -->
+              <div class="contacts">
+                <div class="list" v-for="contatto in contatti">
+                  {{contatto.nome}}{{contatto.img}}
+                </div>
               </div>
             </div>
-            <!-- barra di ricerca -->
-            <div class="search">
-              <div class="barra">
-                <i class="fas fa-search fa-lg new_search"></i>
-                <input
-                  type="text"
-                  placeholder="Cerca o inizia una nuova chat"
-                  class="research"
-                />
-              </div>
-            </div>
-            <!-- lista dei contatti -->
-            <div class="contacts" id="app">
-              <div class="list" v-for="contatto in contatti">
-                {{contatto.nome}}{{contatto.img}}
+            <!-- area messaggi -->
+            <div class="message_area">
+              <div class="chat"></div>
+              <div class="new_message">
+                <div class="smile">
+                  <i class="far fa-smile fa-2x"></i>
+                </div>
+                <div class="user_new_message">
+                  <input
+                    class="digit_message"
+                    type="text"
+                    placeholder="Scrivi un messaggio"
+                  />
+                </div>
+                <div class="microphone">
+                  <i class="fas fa-microphone fa-2x"></i>
+                </div>
               </div>
             </div>
           </div>
