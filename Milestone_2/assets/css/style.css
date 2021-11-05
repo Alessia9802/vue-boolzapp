@@ -187,6 +187,11 @@
   padding: 1rem;
 }
 
+.notify_desk a {
+  text-decoration: none;
+  color: #547698;
+}
+
 .avatar_contacts {
   width: 100%;
   height: 110px;
@@ -199,4 +204,17 @@
   width: 70px;
   border-radius: 100%;
   margin-right: 10px;
+}
+
+.message {
+  width: 100%;
+  height: 20px;
+}
+
+.sent {
+  background-color: cornflowerblue;
+}
+
+.received {
+  background-color: crimson;
 }

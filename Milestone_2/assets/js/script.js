@@ -7,7 +7,10 @@ messaggi relativi al contatto attivo all’interno del pannello della conversazi
 const app = new Vue({
   el: "#app",
   data: {
-    activeContact: 0,
+    activeContact: 0, //contatto attivo
+    activeMessage: null, //messaggio attivo
+    messageText: "", //campo vuoto messaggio
+    search: "", //campo vuoto ricerca contatti
     contacts: [
       {
         name: "Michele",
@@ -93,6 +96,12 @@ const app = new Vue({
         ],
       },
     ],
+  },
+  methods: {
+    currentContact(index) {
+      console.log("prova");
+      this.activeContact = index;
+    },
   },
 });
 

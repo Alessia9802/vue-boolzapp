@@ -35,10 +35,14 @@
             <!-- ultimo accesso dell'utente -->
             <div class="user_last_access">
               <div class="photo_profile_1">
-                <img class="user_1" src="./assets/img/avatar_1.jpg" alt="" />
+                <img
+                  class="user_1"
+                  :src="'./assets/img/avatar' + contacts[activeContact].avatar +'.jpg'"
+                  alt=""
+                />
               </div>
               <div class="text">
-                <p>Michele</p>
+                <p>{{contacts[activeContact].name}}</p>
                 <p>Ultimo accesso oggi alle</p>
               </div>
               <div class="icons_1">
@@ -60,7 +64,9 @@
                 </div>
                 <div class="message">
                   <p>Ricevi notifiche di nuovi messaggi</p>
-                  <p class="notify_desk">Attiva notifiche desktop</p>
+                  <p class="notify_desk">
+                    <a href="#">Attiva notifiche desktop</a>
+                  </p>
                 </div>
               </div>
               <!-- barra di ricerca -->
@@ -76,7 +82,11 @@
               </div>
               <!-- lista dei contatti -->
               <div class="contacts">
-                <div class="list" v-for="(contact, index) in contacts">
+                <div
+                  class="list"
+                  v-for="(contact, index) in contacts"
+                  @click="currentContact(index)"
+                >
                   <div class="avatar_contacts">
                     <img
                       class="icon_avatar"
@@ -91,14 +101,13 @@
             <!-- area messaggi -->
             <div class="message_area">
               <div class="chat">
-                <div
-                  class="conversations"
-                  v-for="(message, index) in contacts[activeContact].messages "
-                >
-                  <div class="message">
-                    {{ message.text }}{{ message.date }}{{ message.sent }}
-
-                    <div @click="{{ contact[activeContact].name }}"></div>
+                <div class="conversations">
+                  <div
+                    class="message"
+                    :class="message.status"
+                    v-for="(message, index) in contacts[activeContact].messages "
+                  >
+                    {{ message.text }}
                   </div>
                 </div>
               </div>
