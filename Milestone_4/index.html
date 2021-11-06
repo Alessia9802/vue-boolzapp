@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Boolzapp</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- background widescreen-->
+      <div class="bg_screen">
+        <div class="green">
+          <div class="users">
+            <!-- icona profilo -->
+            <div class="user_name">
+              <div class="photo_profile">
+                <img class="user" src="./assets/img/avatar_io.jpg" alt="" />
+                <p>Nome utente</p>
+                <div class="icons">
+                  <i class="fas fa-circle-notch fa-2x"></i>
+                  <i class="fas fa-comment-alt fa-2x"></i>
+                  <i class="fas fa-ellipsis-v fa-2x"></i>
+                </div>
+              </div>
+            </div>
+            <!-- ultimo accesso dell'utente -->
+            <div class="user_last_access">
+              <div class="photo_profile_1">
+                <img
+                  class="user_1"
+                  :src="'./assets/img/avatar' + contacts[activeContact].avatar +'.jpg'"
+                  alt=""
+                />
+              </div>
+              <div class="text">
+                <p>{{contacts[activeContact].name}}</p>
+                <p>Ultimo accesso oggi alle</p>
+              </div>
+              <div class="icons_1">
+                <i class="fas fa-search fa-2x"></i>
+                <i class="fas fa-paperclip fa-2x"></i>
+                <i class="fas fa-ellipsis-v fa-2x"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gray">
+          <div class="chat_users">
+            <!-- barra laterale -->
+            <div class="sidebar">
+              <!-- banner notifiche -->
+              <div class="notifiche">
+                <div class="bell">
+                  <i class="fas fa-bell-slash fa-2x"></i>
+                </div>
+                <div class="message">
+                  <p>Ricevi notifiche di nuovi messaggi</p>
+                  <p class="notify_desk">
+                    <a href="#">Attiva notifiche desktop</a>
+                  </p>
+                </div>
+              </div>
+              <!-- barra di ricerca -->
+              <div class="search">
+                <div class="barra">
+                  <i class="fas fa-search fa-lg new_search"></i>
+                  <input
+                    @keyup="search_text"
+                    v-model="search"
+                    type="text"
+                    placeholder="Cerca o inizia una nuova chat"
+                    class="research"
+                  />
+                </div>
+              </div>
+              <!-- lista dei contatti -->
+              <div class="contacts">
+                <div
+                  class="list"
+                  v-for="(contact, index) in contacts"
+                  @click="currentContact(index)"
+                >
+                  <div class="avatar_contacts">
+                    <img
+                      class="icon_avatar"
+                      :src="'./assets/img/avatar' + contact.avatar + '.jpg'"
+                      alt=""
+                    />
+                    <div>{{ contact.name }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- area messaggi -->
+            <div class="message_area">
+              <div class="chat">
+                <div
+                  :class="message.status"
+                  v-for="(message, index) in contacts[activeContact].messages "
+                >
+                  {{ message.text }}
+                  <div class="date">{{ message.date }}</div>
+                </div>
+              </div>
+              <div class="new_message">
+                <div class="smile">
+                  <i class="far fa-smile fa-2x"></i>
+                </div>
+                <div class="user_new_message">
+                  <input
+                    class="digit_message"
+                    type="text"
+                    placeholder="Scrivi un messaggio"
+                    v-model="messageText"
+                    @keyup.enter="addText"
+                  />
+                </div>
+                <div class="microphone">
+                  <i class="fas fa-microphone fa-2x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+    <script>
+      dayjs().format();
+    </script>
+  </body>
+</html>
