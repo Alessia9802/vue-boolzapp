@@ -120,15 +120,22 @@ const app = new Vue({
       }, 1000);
     },
     //Filtro contatti
-    search_text() {
+    /* search_text() {
       this.contacts.forEach((contact) => {
-        let contact_name = contact.name.toUpperCase();
-        let searched_name = this.search.toUpperCase();
-        if (contact_name.includes(searched_name)) {
-          contact.visible = true;
+        const contact_name = contact.name.toLowerCase();
+        const searched_name = this.search.toLowerCase();
+        if (contact_name.includes(search)) {
+          return true;
         } else {
-          contact.visible = false;
+          return false;
         }
+      });
+    }, */
+  },
+  computed: {
+    filteredContacts: function () {
+      return this.contacts.filter((contact) => {
+        return contact.name.match(this.search);
       });
     },
   },

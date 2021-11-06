@@ -74,7 +74,7 @@
                 <div class="barra">
                   <i class="fas fa-search fa-lg new_search"></i>
                   <input
-                    @keyup="search_text"
+                    @keyup="filteredContacts"
                     v-model="search"
                     type="text"
                     placeholder="Cerca o inizia una nuova chat"
@@ -86,7 +86,7 @@
               <div class="contacts">
                 <div
                   class="list"
-                  v-for="(contact, index) in contacts"
+                  v-for="(contact, index) in filteredContacts"
                   @click="currentContact(index)"
                 >
                   <div class="avatar_contacts">
