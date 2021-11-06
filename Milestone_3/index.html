@@ -101,14 +101,12 @@
             <!-- area messaggi -->
             <div class="message_area">
               <div class="chat">
-                <div class="conversations">
-                  <div
-                    class="message"
-                    :class="message.status"
-                    v-for="(message, index) in contacts[activeContact].messages "
-                  >
-                    {{ message.text }}{{ message.date }}
-                  </div>
+                <div
+                  :class="message.status"
+                  v-for="(message, index) in contacts[activeContact].messages "
+                >
+                  {{ message.text }}
+                  <div class="date">{{ message.date }}</div>
                 </div>
               </div>
               <div class="new_message">
